@@ -50,7 +50,7 @@ function setClockHTML() {
 // prefixes single digit time numerals with a 0, returns time
 function getTime() {
     if (theHour < 10) {
-        theHour = '0' + theHour 
+        theHour = '0' + theHour
     }
     if (theMinute < 10) {
         theMinute = '0' + theMinute
@@ -82,13 +82,6 @@ function setProgressBar() {
 //--------------------------------------------------
 // CALL FUNCTIONS / SET INTERVAL
 //--------------------------------------------------
-   
-// start immediately upon page load
-timeVariables()
-addEvents()
-setClockHTML()
-getHexColor()
-setProgressBar()
 
 // update each second
 setInterval(function() {
@@ -97,5 +90,4 @@ setInterval(function() {
     setClockHTML()
     getHexColor()
     setProgressBar()
-}, 500)
-
+}, 100)
