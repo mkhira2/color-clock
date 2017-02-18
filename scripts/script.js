@@ -1,6 +1,6 @@
-//******************************
+//--------------------------------------------------
 // GLOBAL VARIABLES
-//******************************
+//--------------------------------------------------
 
 // allow access to DOM
 var clock = document.querySelector('.time_value')
@@ -13,9 +13,9 @@ var theMinute = ''
 var theSecond = ''
 var showHex = false // page state initially set to false
 
-//******************************
+//--------------------------------------------------
 // SET FUNCTIONS
-//******************************
+//--------------------------------------------------
 function timeVariables() {
     var date = new Date()
     var hours = date.getHours()
@@ -64,6 +64,7 @@ function getTime() {
 
 // sets and returns background color based on hex value
 function getHexColor() {
+
     var hexHours = (Math.floor(theHour / 24 * 255)).toString(16)
     var hexMinutes = (Math.floor(theMinute / 60 * 255)).toString(16)
     var hexSeconds = (Math.floor(theSecond / 60 * 255)).toString(16)
@@ -75,17 +76,26 @@ function getHexColor() {
 }
 
 function setProgressBar() {
-    progressBar.style.width = theSecond.toString() + '%'
+    progressBar.style.width = theSecond + '%'
 }
 
-//******************************
+//--------------------------------------------------
 // CALL FUNCTIONS / SET INTERVAL
-//******************************
+//--------------------------------------------------
+   
+// start immediately upon page load
+timeVariables()
+addEvents()
+setClockHTML()
+getHexColor()
+setProgressBar()
 
+// update each second
 setInterval(function() {
     timeVariables()
     addEvents()
     setClockHTML()
     getHexColor()
     setProgressBar()
-}, 1000)
+}, 500)
+
