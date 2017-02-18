@@ -41,15 +41,16 @@ function addEvents() {
 
 function setClockHTML() {
     if (showHex) {
-        clock.innerHTML = getHexColor()
+        clock.innerHTML = getHexColor() // display hex values on big clock
     } else {
-        clock.innerHTML = getTime()
+        clock.innerHTML = getTime() // display current time on big clock
     }
 }
 
+// prefixes single digit time numerals with a 0, returns time
 function getTime() {
     if (theHour < 10) {
-        theHour = '0' + theHour
+        theHour = '0' + theHour 
     }
     if (theMinute < 10) {
         theMinute = '0' + theMinute
@@ -61,6 +62,7 @@ function getTime() {
     return theHour + ':' + theMinute + ':' + theSecond
 }
 
+// sets and returns background color based on hex value
 function getHexColor() {
     var hexHours = (Math.floor(theHour / 24 * 255)).toString(16)
     var hexMinutes = (Math.floor(theMinute / 60 * 255)).toString(16)
