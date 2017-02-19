@@ -16,6 +16,7 @@ var showHex = false // page state initially set to false
 //--------------------------------------------------
 // SET FUNCTIONS
 //--------------------------------------------------
+
 function timeVariables() {
     var date = new Date()
     var hours = date.getHours()
@@ -77,6 +78,11 @@ function getHexColor() {
 
 function setProgressBar() {
     progressBar.style.width = theSecond + '%'
+    if (theSecond >= 55) {
+        progressBar.style.background = 'red'
+    } else {
+        progressBar.style.background = 'white'
+    }
 }
 
 //--------------------------------------------------
