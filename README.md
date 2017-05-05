@@ -11,7 +11,8 @@ pleasing color clock with a dynamic progress bar that grows by the second. Enjoy
 
 ## Installation
 
-```git clone https://github.com/mkhira2/color-clock.git
+```
+git clone https://github.com/mkhira2/color-clock.git
 cd color-clock
 open index.html
 ```
